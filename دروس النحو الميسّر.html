@@ -1,0 +1,642 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>دروس النحو الميسّر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: one continuous page, eight lessons in order; sticky chip nav; each lesson is a tree of soft pastel cards. */
+:root{
+  --bg:#f4f9ff; --surface:#ffffff; --fg:#27405c; --muted:#5d7690; --line:#d6e6f5;
+  --sky:#d9edff; --sky-ink:#1f5f9e;
+  --mint:#d8f5e6; --mint-ink:#1c7a52;
+  --peach:#ffe6d5; --peach-ink:#b2552a;
+  --lilac:#e9e2ff; --lilac-ink:#5a41b0;
+  --lemon:#fff5c9; --lemon-ink:#8a6a00;
+  --rose:#ffe0ea; --rose-ink:#b0345c;
+  --accent:#e0457b;
+  --font-display:"Baloo Bhaijaan 2","Tajawal",system-ui,sans-serif;
+  --font-body:"Tajawal","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13202e; --surface:#1b2d40; --fg:#e6f0fb; --muted:#9fb6cc; --line:#2c4560;
+  --sky:#1d3a57; --sky-ink:#9ccdf6;
+  --mint:#18402f; --mint-ink:#8fe0b8;
+  --peach:#48291a; --peach-ink:#ffb996;
+  --lilac:#33295a; --lilac-ink:#c5b6ff;
+  --lemon:#443a10; --lemon-ink:#ffe27a;
+  --rose:#4a1f30; --rose-ink:#ffa9c4;
+  --accent:#ff7aa5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13202e; --surface:#1b2d40; --fg:#e6f0fb; --muted:#9fb6cc; --line:#2c4560;
+  --sky:#1d3a57; --sky-ink:#9ccdf6;
+  --mint:#18402f; --mint-ink:#8fe0b8;
+  --peach:#48291a; --peach-ink:#ffb996;
+  --lilac:#33295a; --lilac-ink:#c5b6ff;
+  --lemon:#443a10; --lemon-ink:#ffe27a;
+  --rose:#4a1f30; --rose-ink:#ffa9c4;
+  --accent:#ff7aa5; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:18px;line-height:1.85;margin:0;padding-inline:16px;padding-block:0 56px}
+.wrap{max-width:1040px;margin-inline:auto}
+header.top{padding-block:28px 12px;display:flex;flex-direction:column;gap:6px}
+header.top .kicker{font-size:15px;color:var(--muted);letter-spacing:.02em}
+header.top h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px);line-height:1.3;margin:0;text-wrap:balance}
+header.top h1 span{color:var(--accent)}
+.byline{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:16px;color:var(--muted)}
+.byline b{color:var(--fg)}
+nav.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+nav.chips ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin}
+nav.chips a{display:flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px 4px 10px;font-size:15px;line-height:1.6}
+nav.chips a i{font-style:normal;font-family:var(--font-display);font-weight:700;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--sky);color:var(--sky-ink);font-size:15px}
+nav.chips a:hover,nav.chips a:focus-visible{border-color:var(--accent);outline:none}
+section.lesson{padding-block:34px 10px;scroll-margin-top:70px}
+.lesson-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.num{font-family:var(--font-display);font-weight:700;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:24px;flex:none}
+.lesson-head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,5vw,36px);line-height:1.4;margin:0;text-wrap:balance}
+.sub{margin:0 0 14px;color:var(--muted);font-size:17px}
+.follow{font-size:15px;color:var(--muted);background:var(--lemon);color:var(--lemon-ink);border-radius:12px;padding:8px 14px;margin-block:0 22px;display:inline-block}
+.follow b{font-weight:700}
+.parent{display:flex;justify-content:center;margin-bottom:6px}
+.node{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.5;padding:4px 26px;border-radius:999px;background:var(--sky);color:var(--sky-ink);text-align:center}
+.node.sq{border-radius:14px}
+.node.mint{background:var(--mint);color:var(--mint-ink)}
+.node.peach{background:var(--peach);color:var(--peach-ink)}
+.node.lilac{background:var(--lilac);color:var(--lilac-ink)}
+.node.rose{background:var(--rose);color:var(--rose-ink)}
+.node.lemon{background:var(--lemon);color:var(--lemon-ink)}
+.node small{display:block;font-family:var(--font-body);font-weight:500;font-size:14px;opacity:.85;line-height:1.5}
+.stem{width:3px;height:22px;background:var(--line);margin-inline:auto;border-radius:2px}
+.kids{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));align-items:start;margin-top:0}
+.kids.k2{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.kids.k5{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 18px 18px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.card>.node{align-self:center;margin-bottom:4px;font-size:21px}
+.card p{margin:0}
+.def{font-weight:500}
+.lbl{font-family:var(--font-display);font-weight:700;color:var(--accent);font-size:18px;margin-top:6px}
+.lbl.blue{color:var(--sky-ink)}
+.ex{background:var(--bg);border-radius:12px;padding:6px 12px;margin:0;color:var(--fg)}
+ul.l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+ul.l li{position:relative;padding-inline-start:20px}
+ul.l li::before{content:"";position:absolute;inset-inline-start:0;top:.8em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+ul.l.star li::before{border-radius:2px;transform:rotate(45deg);background:var(--lemon-ink)}
+ol.nums{list-style:none;counter-reset:n;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+ol.nums li{counter-increment:n;position:relative;padding-inline-start:38px}
+ol.nums li::before{content:counter(n);position:absolute;inset-inline-start:0;top:3px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-family:var(--font-display);font-weight:700;background:var(--peach);color:var(--peach-ink);line-height:1}
+.w{font-family:var(--font-display);font-weight:700;color:var(--sky-ink)}
+.red{color:var(--rose-ink);font-weight:700}
+.note{background:var(--rose);color:var(--rose-ink);border-radius:16px;padding:10px 16px;font-weight:500}
+.note.lemon{background:var(--lemon);color:var(--lemon-ink)}
+.note.mint{background:var(--mint);color:var(--mint-ink)}
+.arrow{color:var(--accent);font-weight:700}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:18px;align-items:start}
+.sep{border:0;border-top:2px dashed var(--line);margin:34px 0 0}
+.sheet{overflow-x:auto}
+footer{padding-block:26px 0;color:var(--muted);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="kicker">دروس مجانية في النحو</span>
+  <h1>أقسام الكلمة <span>والاسم</span> ومشتقاته</h1>
+  <div class="byline"><span>المعلمة: <b>آلاء أحمد</b></span></div>
+</header>
+
+<nav class="chips" aria-label="الدروس">
+<ol>
+<li><a href="#l1"><i>١</i>أقسام الكلمة</a></li>
+<li><a href="#l2"><i>٢</i>الاسم وأقسامه</a></li>
+<li><a href="#l3"><i>٣</i>النكرة والمعرفة</a></li>
+<li><a href="#l4"><i>٤</i>الأسماء الموصولة وأسماء الاستفهام</a></li>
+<li><a href="#l5"><i>٥</i>أسماء الإشارة والضمائر</a></li>
+<li><a href="#l6"><i>٦</i>الضمائر</a></li>
+<li><a href="#l7"><i>٧</i>المقصور والممدود والمنقوص</a></li>
+<li><a href="#l8"><i>٨</i>المثنى وجمع المذكر وجمع المؤنث السالمين</a></li>
+</ol>
+</nav>
+
+<!-- ============ 1 ============ -->
+<section class="lesson" id="l1">
+  <div class="lesson-head"><span class="num">١</span><h2>أقسام الكلمة</h2></div>
+  <div class="parent"><span class="node">أقسام الكلمة</span></div>
+  <div class="stem"></div>
+  <div class="kids">
+    <!-- الاسم (right in RTL = first) -->
+    <article class="card">
+      <span class="node">الاسم</span>
+      <p class="def">هو ما دلّ على إنسان، أو حيوان، أو نبات، أو جماد، أو زمان، أو مكان، أو صفة، أو أي شيء يُدرَك بالحواس أو بالعقل وليس الزمن جزءًا منه:</p>
+      <span class="lbl">مثل:</span>
+      <p class="ex">(محمد - عصفور - زهرة - جبل - صيف - مدرسة - كريم ......)</p>
+      <span class="node lilac sq" style="align-self:center;margin-top:8px">علامات الاسم</span>
+      <ol class="nums">
+        <li>الجر بحرف جر: <span class="w">المعلم في الفصل.</span></li>
+        <li>الجر بالإضافة: <span class="w">طالب العلم مجتهد.</span></li>
+        <li>التنوين: <span class="w">سلمتُ على رجلٍ وهو معلّمٌ.</span></li>
+        <li>دخول (ال) عليه: <span class="w">القلم الجميل مع الطالب.</span></li>
+        <li>دخول حرف النداء عليه: <span class="w">يا طالب، أيا صديقي.</span></li>
+      </ol>
+    </article>
+    <!-- الفعل -->
+    <article class="card">
+      <span class="node mint">الفعل</span>
+      <p class="def">هو ما دلّ على حدوث شيء في زمن معين سواءً كان:</p>
+      <ul class="l">
+        <li><span class="red">ماضٍ:</span> مثل (كتب - سمع - اجتهد)</li>
+        <li><span class="red">مضارع:</span> مثل (يكتب - يسمع - يجتهد)</li>
+        <li><span class="red">أمر:</span> مثل (اكتب - اسمع - اجتهد)</li>
+      </ul>
+      <span class="node lilac sq" style="align-self:center;margin-top:8px">علامات الفعل</span>
+      <ul class="l star">
+        <li><span class="red">الفعل الماضي:</span> يقبل اتصال:
+          <ul class="l" style="margin-top:6px">
+            <li>تاء الفاعل <span class="w">(كتبتُ الواجب أمس)</span></li>
+            <li>تاء التأنيث <span class="w">(ذاكرتْ هندٌ الدروس)</span></li>
+          </ul></li>
+        <li><span class="red">الفعل المضارع:</span>
+          <ul class="l" style="margin-top:6px">
+            <li>يقبل دخول حرف الجزم «لم» عليه: <span class="w">(لم أكذبْ)</span></li>
+            <li>تتصل به نون التوكيد: <span class="w">(لأساعدنَّ صاحبي)</span></li>
+          </ul></li>
+        <li><span class="red">فعل الأمر:</span> تتصل به ياء المخاطبة: <span class="w">اكتبي..</span> ونون التوكيد: <span class="w">اصبرنَّ على كدر</span></li>
+      </ul>
+    </article>
+    <!-- الحرف -->
+    <article class="card">
+      <span class="node peach">الحرف</span>
+      <p class="def">هو الذي لا يفهم معناه إلا مع غيره من الكلمات.</p>
+      <span class="lbl">مثل:</span>
+      <ol class="nums">
+        <li><span class="red">حروف الجر:</span><p class="ex">(من - إلى - عن - على - في - ب - ك - ل)</p></li>
+        <li><span class="red">حروف العطف:</span><p class="ex">(الواو - الفاء - ثم - أو - بل - لكنْ - لا)</p></li>
+        <li><span class="red">حروف نصب الفعل المضارع:</span><p class="ex">(أنْ - لنْ - كي - حتى - لام التعليل ......)</p></li>
+        <li><span class="red">حروف جزم الفعل المضارع:</span><p class="ex">(لم - لام الأمر - لا الناهية - لمّا)</p></li>
+        <li><span class="red">الحروف الناسخة:</span><p class="ex">(إنّ - أنّ - لكنّ - لعلّ - ليتَ - كأنّ)</p></li>
+      </ol>
+      <p class="note">الحرف لا يقبل علامات الاسم أو الفعل.</p>
+    </article>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 2 ============ -->
+<section class="lesson" id="l2">
+  <div class="lesson-head"><span class="num">٢</span><h2>الاسم وأقسامه</h2></div>
+  <div class="parent"><span class="node">الاسم وأقسامه</span></div>
+  <div class="stem"></div>
+  <div class="kids">
+    <!-- من حيث النوع -->
+    <div>
+      <div class="parent"><span class="node sq">من حيث النوع</span></div>
+      <div class="stem"></div>
+      <div class="kids k2" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node mint sq">مذكر</span>
+          <p class="def">ما دلّ على الذكور من الناس والحيوانات والأشياء.</p>
+          <p>ويصح الإشارة إليه بـ (هذا):</p>
+          <ul class="l"><li>هذا محمد.</li><li>هذا معلم.</li><li>هذا قلم.</li><li>هذا كتاب.</li><li>هذا أحمد.</li><li>هذا حمار.</li></ul>
+        </article>
+        <article class="card">
+          <span class="node rose sq">مؤنث</span>
+          <p class="def">هو ما دلّ على الإناث من الناس والحيوانات والأشياء.</p>
+          <p>ويصح الإشارة إليه بـ (هذه):</p>
+          <ul class="l"><li>هذه هند.</li><li>هذه بقرة.</li><li>هذه كراسة.</li></ul>
+          <p><span class="arrow">←</span> <span class="red">المؤنث نوعان:</span></p>
+          <ul class="l"><li><span class="red">حقيقي:</span> يلد أو يبيض.</li><li><span class="red">مجازي:</span> لا يلد ولا يبيض.</li></ul>
+        </article>
+      </div>
+    </div>
+    <!-- من حيث العدد -->
+    <div>
+      <div class="parent"><span class="node sq lilac">من حيث العدد</span></div>
+      <div class="stem"></div>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node sq">مفرد</span>
+          <p class="def">هو ما دلّ على واحد أو واحدة:</p>
+          <span class="lbl">مثل:</span>
+          <p class="ex">(محمد - قلم - معلم)</p>
+          <p class="ex">(فاطمة - سيارة - طبيبة).</p>
+        </article>
+        <article class="card">
+          <span class="node sq">مثنى</span>
+          <p class="def">هو ما دلّ على اثنين أو اثنتين بزيادة ألف ونون في حالة الرفع، وياء ونون في حالتي النصب والجر، وما قبل الياء يكون مفتوحًا، والنون تكون مكسورة:</p>
+          <ul class="l"><li class="red">حضر المعلمان.</li><li class="red">رأيتُ الطالبتين.</li><li class="red">مررتُ بالمهندسين.</li></ul>
+        </article>
+        <article class="card">
+          <span class="node sq">جمع</span>
+          <p class="def">هو ما دلّ على أكثر من اثنين أو اثنتين:</p>
+          <ol class="nums">
+            <li><span class="red">جمع المذكر السالم:</span> هو ما دلّ على أكثر من اثنين بزيادة واو ونون في حالة الرفع وياء ونون في حالتي النصب والجر. <span class="w">(شكر المديرون المعلمين)</span></li>
+            <li><span class="red">جمع المؤنث السالم:</span> هو ما دلّ على أكثر من اثنتين بزيادة ألف وتاء مفتوحة. <span class="w">(كانت الطالباتُ مجتهداتٍ)</span></li>
+            <li><span class="red">جمع التكسير:</span> هو ما تغيّر عن صورة مفرده: <span class="w">(كتب - أقلام - أوقات / مدارس / مصابيح / مساكين)</span></li>
+          </ol>
+        </article>
+      </div>
+    </div>
+    <!-- من حيث التعيين -->
+    <div>
+      <div class="parent"><span class="node sq peach">من حيث التعيين</span></div>
+      <div class="stem"></div>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node sq">المعرفة</span>
+          <p class="def">هو اسم يدل على معيّن:</p>
+          <span class="lbl">المعارف:</span>
+          <ol class="nums"><li>الضمائر.</li><li>العلم.</li><li>أسماء الإشارة.</li><li>الأسماء الموصولة.</li><li>المعرّف بـ (أل).</li><li>المعرّف بالإضافة.</li></ol>
+        </article>
+        <article class="card">
+          <span class="node sq">النكرة</span>
+          <p class="def">هو اسم يدل على غير معيّن:</p>
+          <span class="lbl">مثالًا:</span>
+          <p class="ex"><span class="red">رجل:</span> تدل على أي رجل وليس رجلًا بعينه.</p>
+          <span class="lbl">ومثلها:</span>
+          <p class="ex">طالب - كتاب<br>فصل - معلم<br>قصة - ولد</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 3 ============ -->
+<section class="lesson" id="l3">
+  <div class="lesson-head"><span class="num">٣</span><h2>النكرة والمعرفة</h2></div>
+  <p class="sub">الاسم من حيث التعيين</p>
+  <div class="kids k2" style="margin-top:6px">
+    <article class="card">
+      <span class="node lilac">المعرفة</span>
+      <p class="def">هو ما دلّ على مُعيَّن أو مُحدَّد</p>
+    </article>
+    <article class="card">
+      <span class="node mint">النكرة</span>
+      <p class="def">هو ما دلّ على غير معيّن أو غير محدد</p>
+      <p>وهو ما لم يكن من المعارف السابقة.</p>
+      <span class="lbl">مثل:</span>
+      <p class="ex">طالب - قلم<br>معلم - بنت<br>فصل - ولد</p>
+    </article>
+  </div>
+  <h3 class="lbl" style="font-size:22px;margin:26px 0 8px">أنواع المعرفة</h3>
+  <div class="kids" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
+    <article class="card">
+      <span class="node peach">العلم</span>
+      <p class="def">هو ما دلّ على مسمّى بعينه:</p>
+      <p class="ex">(محمد - فاطمة - سيناء - مصر .....)</p>
+    </article>
+    <article class="card">
+      <span class="node peach">المعرّف بـ (ال)</span>
+      <p class="def">ما دخل عليه (ال) التعريف:</p>
+      <p class="ex">القلم<br>الكتاب<br>المعلم</p>
+    </article>
+    <article class="card">
+      <span class="node peach">المعرّف بالإضافة</span>
+      <p class="def">ما جاء بعده مضاف إليه من المعارف:</p>
+      <p class="ex">طالبُ العلمِ<br>قولُ الحقِّ</p>
+    </article>
+    <article class="card">
+      <span class="node peach">الضمائر</span>
+      <p class="def">منفصلة أو متصلة:</p>
+      <p class="ex">أنا - نحن<br>هو - هي - هما<br>هم - هن<br>أنتَ - أنتِ - أنتما<br>أنتم - أنتن</p>
+    </article>
+    <article class="card">
+      <span class="node peach">أسماء الإشارة</span>
+      <ul class="l">
+        <li><span class="red">للقريب:</span> هذا - هذه<br>هؤلاء - هذان<br>هاتان.</li>
+        <li><span class="red">للبعيد:</span> ذلك - تلك<br>أولئك</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="node peach">الأسماء الموصولة</span>
+      <p class="ex">الذي - التي<br>اللذان - اللتان<br>الذين - اللائي<br>اللاتي ...</p>
+    </article>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 4 ============ -->
+<section class="lesson" id="l4">
+  <div class="lesson-head"><span class="num">٤</span><h2>الأسماء الموصولة وأسماء الاستفهام</h2></div>
+  <div class="kids k2">
+    <!-- الموصولة -->
+    <div>
+      <div class="parent"><span class="node sq">الأسماء الموصولة</span></div>
+      <div class="stem"></div>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node mint">مختصة</span>
+          <p class="def">تستعمل في شيء محدد:</p>
+          <ul class="l">
+            <li><span class="w">الذي:</span> للمفرد المذكر<p class="ex">الطالب الذي يذاكر ينجح</p></li>
+            <li><span class="w">التي:</span> للمفردة المؤنثة وجمع غير العاقل<p class="ex">الطالبة التي تذاكر تنجح - الكتب التي..</p></li>
+            <li><span class="w">اللذان:</span> للمثنى المذكر<p class="ex">الطالبان اللذان يذاكران ينجحان</p></li>
+            <li><span class="w">اللتان:</span> للمثنى المؤنث<p class="ex">الطالبتان اللتان تذاكران تنجحان</p></li>
+            <li><span class="w">الذين:</span> لجمع المذكر<p class="ex">الطلاب الذين يذاكرون ينجحون</p></li>
+            <li><span class="w">اللاتي - اللائي:</span> لجمع الإناث<p class="ex">الطالبات اللاتي / اللائي ...</p></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="node lilac">مشتركة</span>
+          <p class="def">تستعمل في أكثر من شيء.</p>
+          <ul class="l">
+            <li><span class="w">مَنْ:</span> للعاقل (المفرد - المثنى - الجمع)
+              <p class="ex">- تكرّم الدولة مَنْ يتفوق.</p>
+              <p class="ex">- شكر المدير مَنْ حضروا.</p>
+              <p class="ex">- سلّم على مَنْ تقابل.</p></li>
+            <li><span class="w">مَا:</span> لغير العاقل (المفرد - المثنى - الجمع)
+              <p class="ex">- ينال المرءُ جزاءَ ما يعمل.</p>
+              <p class="ex">- أنفقتُ ما معي من الأموال.</p>
+              <p class="ex">- أدّيتُ ما عليّ من واجبات.</p></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <!-- الاستفهام -->
+    <div>
+      <div class="parent"><span class="node sq rose">أسماء الاستفهام<small>لها الصدارة</small></span></div>
+      <div class="stem"></div>
+      <article class="card">
+        <p class="note">يوجد حرفان للاستفهام هما: هل والهمزة</p>
+        <ul class="l">
+          <li><span class="w">مَنْ:</span> يُستفهم بها عن العاقل:<p class="ex">مَنْ أبوك؟ - مَنْ كتب الدرس؟</p></li>
+          <li><span class="w">مَا:</span> يُستفهم بها عن غير العاقل:<p class="ex">ما اسمك؟ - ما الذي أعجبك في مصر؟</p></li>
+          <li><span class="w">مَتى:</span> يُستفهم بها عن الزمان:<p class="ex">متى تنام؟ - متى يبدأ العام الدراسي؟</p></li>
+          <li><span class="w">أينَ:</span> يُستفهم بها عن المكان:<p class="ex">أين تسكن؟ - أين تقع مدينة الإسكندرية؟</p></li>
+          <li><span class="w">كَمْ:</span> يُستفهم بها عن العدد:<p class="ex">كم قلمًا معك؟ - كم شهرًا في السنة؟</p></li>
+          <li><span class="w">كيفَ:</span> يُستفهم بها عن الحال:<p class="ex">كيف حالك؟ - كيف تذاكر؟</p></li>
+          <li><span class="w">أيّ:</span> يُستفهم بها عن كل ما سبق، بحسب ما تضاف إليه:<p class="ex">- أيّ المعلمين يشرح لك؟ - أيّ كتاب تحب؟ - أيّ يوم هذا؟</p><p class="ex">- أيّ البلاد تحب؟ - على أيّ حال أصبحت؟</p></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 5 ============ -->
+<section class="lesson" id="l5">
+  <div class="lesson-head"><span class="num">٥</span><h2>أسماء الإشارة والضمائر</h2></div>
+  <div class="kids k2">
+    <!-- أسماء الإشارة -->
+    <div>
+      <div class="parent"><span class="node sq">أسماء الإشارة</span></div>
+      <div class="stem"></div>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node mint">للقريب</span>
+          <ul class="l">
+            <li><span class="w">هذا:</span> للمفرد المذكر.<p class="ex">هذا ولد - هذا قلم</p></li>
+            <li><span class="w">هذه:</span> للمفردة المؤنثة والجمع غير العاقل.<p class="ex">هذه بنت، هذه أشجار</p></li>
+            <li><span class="w">هذان:</span> للمثنى المذكر.<p class="ex">هذان ولدان / قلمان</p></li>
+            <li><span class="w">هاتان:</span> للمثنى المؤنث.<p class="ex">هاتان بنتان / كراستان</p></li>
+            <li><span class="w">هؤلاء:</span> للجمع العاقل بنوعيه<p class="ex">هؤلاء أولاد / بنات.</p></li>
+          </ul>
+          <p class="note"><span class="red">ملحوظة:</span> أصلها (ذا - ذه ....)</p>
+        </article>
+        <article class="card">
+          <span class="node peach">للبعيد</span>
+          <ul class="l">
+            <li><span class="w">ذلك:</span> و(ذاك) للمفرد المذكر<p class="ex">«ذلك الكتاب لا ريب فيه»</p></li>
+            <li><span class="w">تلك:</span> للمفردة المؤنثة<p class="ex">تلك فتاة محترمة</p></li>
+            <li><span class="w">أولئك:</span> للجمع بنوعيه<p class="ex">أولئك رجال / بنات</p></li>
+          </ul>
+          <ul class="l star">
+            <li><span class="red">(ذانِك - تانِك)</span> للمثنى. (قليلة الاستعمال)</li>
+            <li><span class="red">(هناك - هنالك)</span> للمكان البعيد</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <!-- الضمائر -->
+    <div>
+      <div class="parent"><span class="node sq lilac">الضمائر الظاهرة المنفصلة<small>(في محل رفع)</small></span></div>
+      <div class="stem"></div>
+      <p class="note" style="margin-bottom:14px">يوجد ضمير منفصل في محل نصب وهو (إيّا): إيّاك - إيّاهم - إيّاكِ ......</p>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node mint">المتكلم</span>
+          <ul class="l">
+            <li><span class="w">أنا:</span> للمفرد بنوعيه<p class="ex">أنا مجتهدٌ / مجتهدةٌ</p></li>
+            <li><span class="w">نحن:</span> للمثنى بنوعيه وللجمع بنوعيه<p class="ex">نحن رجلان<br>نحن طبيبتان<br>نحن معلمون<br>نحن معلمات</p></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="node peach">الغائب</span>
+          <ul class="l">
+            <li><span class="w">هو:</span> للمفرد المذكر<p class="ex">هو محترم.</p></li>
+            <li><span class="w">هي:</span> للمفردة المؤنثة<p class="ex">هي مجتهدة</p></li>
+            <li><span class="w">هما:</span> للمثنى بنوعيه<p class="ex">هما محترمان / محترمتان</p></li>
+            <li><span class="w">هم:</span> لجمع المذكر<p class="ex">هم محترمون</p></li>
+            <li><span class="w">هنّ:</span> لجمع المؤنث<p class="ex">هنّ محترمات</p></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="node rose">المخاطب</span>
+          <ul class="l">
+            <li><span class="w">أنتَ:</span> للمفرد المذكر<p class="ex">أنتَ مجتهدٌ</p></li>
+            <li><span class="w">أنتِ:</span> للمفردة المؤنثة<p class="ex">أنتِ مجتهدةٌ</p></li>
+            <li><span class="w">أنتما:</span> للمثنى بنوعيه<p class="ex">أنتما مجتهدان / مجتهدتان</p></li>
+            <li><span class="w">أنتم:</span> للجمع المذكر<p class="ex">أنتم مجتهدون</p></li>
+            <li><span class="w">أنتنّ:</span> للجمع المؤنث<p class="ex">أنتنّ مجتهدات</p></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+  <p class="note lemon" style="margin-top:18px">والهاء ليست جزءًا من اسم الإشارة ولكنها للتنبيه.</p>
+</section>
+
+<hr class="sep">
+<!-- ============ 6 ============ -->
+<section class="lesson" id="l6">
+  <div class="lesson-head"><span class="num">٦</span><h2>الضمائر</h2></div>
+  <div class="parent"><span class="node">الضمائر</span></div>
+  <div class="stem"></div>
+  <div class="kids k2">
+    <!-- بارزة -->
+    <div>
+      <div class="parent"><span class="node sq mint">بارزة (ظاهرة)</span></div>
+      <p class="def" style="text-align:center;margin:4px 0 6px">هو ما كان له صورة ظاهرة في الكلام</p>
+      <div class="stem"></div>
+      <div class="kids" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="node sq">منفصلة<small>لم تتصل بما قبلها</small></span>
+          <p class="lbl blue">في محل رفع</p>
+          <ul class="l">
+            <li><span class="w">متكلم:</span> أنا - نحن</li>
+            <li><span class="w">غائب:</span> هو - هي - هما - هم - هن</li>
+            <li><span class="w">مخاطب:</span> أنتَ - أنتِ - أنتما - أنتم - أنتن.</li>
+          </ul>
+          <p class="note">يُعرب ضمير مبني في محل رفع مبتدأ:<br><span class="w">هو محترم - أنتَ مجتهد</span></p>
+          <p class="note lemon">يوجد ضمير متصل واحد في محل نصب وهو (إيّا)</p>
+        </article>
+        <article class="card">
+          <span class="node sq lilac">متصلة<small>اتصلت بما قبلها</small></span>
+          <p class="lbl blue">في محل رفع (فاعل / اسم كان)</p>
+          <ul class="l star">
+            <li>تاء الفاعل: <span class="w">كتبتُ</span></li>
+            <li>ألف الاثنين: <span class="w">ضربا</span></li>
+            <li>واو الجماعة: <span class="w">شربوا</span></li>
+            <li>نون النسوة: <span class="w">ذاكرن</span></li>
+            <li>نا الفاعلين: <span class="w">سمعنا</span></li>
+          </ul>
+          <p class="note"><span class="arrow">←</span> ضمير مبني في محل رفع فاعل</p>
+          <p class="note"><span class="arrow">←</span> إذا اتصلت بكان وأخواتها تكون في محل رفع اسمها: <span class="w">كنتُ - كانوا - كنّا</span></p>
+          <p class="lbl blue" style="margin-top:12px">في محل نصب (مفعول به / اسم إنّ)</p>
+          <ul class="l star">
+            <li>هاء الغائب: <span class="w">إنّه - ضربه - ضربها - ضربهم - ضربهما...</span></li>
+            <li>كاف الخطاب: <span class="w">إنّك - ضربك - ضربكما ......</span></li>
+            <li>ياء المتكلم: <span class="w">إنّني - ضربني</span></li>
+            <li>نا المفعولين: <span class="w">ضربنا</span></li>
+          </ul>
+          <p class="note"><span class="arrow">←</span> إذا اتصلت بالفعل تكون في محل نصب مفعول به</p>
+          <p class="note"><span class="arrow">←</span> إذا اتصلت بإنّ وأخواتها تكون في محل نصب اسم إنّ.</p>
+          <p class="lbl blue" style="margin-top:12px">في محل جر (مضاف إليه / اسم مجرور)</p>
+          <p>نفس ضمائر النصب (هاء الغائب - كاف الخطاب - ياء المتكلم - نا المفعولين)</p>
+          <p class="note"><span class="arrow">←</span> إذا اتصلت بحرف جر تكون في محل جر اسم مجرور <span class="w">(بكَ - منه)</span></p>
+          <p class="note"><span class="arrow">←</span> إذا اتصلت باسم تكون في محل جر مضاف إليه: <span class="w">قلمك - كتابه ....</span></p>
+        </article>
+      </div>
+    </div>
+    <!-- مستترة -->
+    <div>
+      <div class="parent"><span class="node sq peach">مستترة</span></div>
+      <p class="def" style="text-align:center;margin:4px 0 6px">ليس له صورة في الكلام، يُقدَّر بعد الفعل:</p>
+      <div class="stem"></div>
+      <article class="card">
+        <ul class="l star">
+          <li><span class="w">محمد يكتب الدرس.</span> <span class="red">(هو)</span><p class="ex"><span class="arrow">←</span> الفاعل ضمير مستتر تقديره هو</p></li>
+          <li><span class="w">هند تذاكر.</span> <span class="red">(هي)</span><p class="ex"><span class="arrow">←</span> الفاعل ضمير مستتر تقديره هي</p></li>
+          <li><span class="w">نلعب بالكرة.</span> <span class="red">(نحن)</span><p class="ex"><span class="arrow">←</span> الفاعل ضمير مستتر تقديره نحن</p></li>
+          <li><span class="w">أسمع الكلام.</span> <span class="red">(أنا)</span><p class="ex"><span class="arrow">←</span> الفاعل ضمير مستتر تقديره أنا</p></li>
+          <li><span class="w">اكتب الدرس.</span> <span class="red">(أنتَ)</span><p class="ex"><span class="arrow">←</span> الفاعل ضمير مستتر تقديره أنتَ</p></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 7 ============ -->
+<section class="lesson" id="l7">
+  <div class="lesson-head"><span class="num">٧</span><h2>المقصور، الممدود، المنقوص</h2></div>
+  <div class="kids">
+    <!-- المقصور -->
+    <article class="card">
+      <span class="node">الاسم المقصور</span>
+      <p class="def">اسم معرب آخره ألف لازمة مفتوح ما قبلها</p>
+      <p class="lbl">تثنيته وجمعه جمعَ مؤنثٍ:</p>
+      <ol class="nums">
+        <li>إذا كانت الألف ثالثة تُردّ إلى أصلها (واو - ياء):
+          <p class="ex">- عصا <span class="arrow">←</span> عصوان، عصوات.<br>- هدى <span class="arrow">←</span> هديان، هديات.</p></li>
+        <li>إذا كانت الألف رابعة فأكثر تُقلب (ياء):
+          <p class="ex">- دنيا <span class="arrow">←</span> دنيان، ليلى <span class="arrow">←</span> ليليات</p></li>
+      </ol>
+      <p class="lbl">جمعه جمعَ مذكرٍ:</p>
+      <ul class="l">
+        <li><span class="arrow">←</span> تُحذف الألف ويبقى ما قبلها مفتوح</li>
+        <li><span class="arrow">←</span> مصطفى <span class="arrow">←</span> مصطفَون، مصطفَين</li>
+      </ul>
+    </article>
+    <!-- الممدود -->
+    <article class="card">
+      <span class="node mint">الاسم الممدود</span>
+      <p class="def">اسم معرب آخره همزة قبلها ألف زائدة مسبوقة بحرفين أو أكثر، والهمزة:</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="note mint">
+          <span class="w" style="color:inherit">أصلية</span> — تثبت عند التثنية والجمع:
+          <p class="ex" style="margin-top:6px">• إنشاء ← إنشاءان، إنشاءات.<br>• وَضّاء ← وَضّاءان، وَضّاءون</p>
+        </div>
+        <div class="note mint">
+          <span class="w" style="color:inherit">منقلبة عن أصل</span> — تبقى همزة أو تقلب واوًا عند التثنية والجمع:
+          <p class="ex" style="margin-top:6px">• سماء ← سماءان، سماوان<br>سماوات، سماءات.<br>• بَنّاء ← بَنّاءان، بَنّاوان<br>بَنّاؤون، بَنّاوون</p>
+        </div>
+        <div class="note mint">
+          <span class="w" style="color:inherit">زائدة للتأنيث</span> — تقلب واوًا عند التثنية والجمع:
+          <p class="ex" style="margin-top:6px">• صحراء: صحراوان، صحراوات.<br>• خضراء: خضراوان، خضراوات.</p>
+        </div>
+      </div>
+    </article>
+    <!-- المنقوص -->
+    <article class="card">
+      <span class="node peach">الاسم المنقوص</span>
+      <p class="def">اسم معرب آخره ياء لازمة مكسور ما قبلها</p>
+      <p class="note">تُحذف الياء إذا كان نكرة في حالتي الرفع والجر: جاء ساعٍ.</p>
+      <p class="lbl">تثنيته وجمعه جمعَ مؤنثٍ:</p>
+      <ul class="l">
+        <li>تثبت الياء وتُردّ إذا كانت محذوفة:<p class="ex">قاضٍ ← قاضيان، قاضيين<br>قاضية ← قاضيات.</p></li>
+        <li><p class="ex">ساعٍ ← ساعيان، ساعيين.</p></li>
+      </ul>
+      <p class="lbl">جمعه جمعَ مذكرٍ:</p>
+      <p>تُحذف الياء ويُرفع ما قبلها مع الرفع (ون) وكسره مع النصب والجر (ين):</p>
+      <p class="ex">قاضٍ ← قاضون - قاضين</p>
+    </article>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- ============ 8 ============ -->
+<section class="lesson" id="l8">
+  <div class="lesson-head"><span class="num">٨</span><h2>المثنى، جمع المذكر السالم، جمع المؤنث السالم، وما يلحق بهم</h2></div>
+  <div class="kids">
+    <!-- المثنى -->
+    <article class="card">
+      <span class="node sq">المثنى</span>
+      <p class="def">هو ما دلّ على اثنين أو اثنتين بزيادة ألف ونون أو ياء ونون.</p>
+      <p class="lbl">إعرابه:</p>
+      <ul class="l">
+        <li>يُرفع وعلامة رفعه <u>الألف</u>. (قلمانِ)</li>
+        <li>يُنصب ويُجر وعلامة النصب والجر <u>الياء</u> (قلمينِ)</li>
+      </ul>
+      <p class="lbl">ما يلحق به:</p>
+      <ul class="l">
+        <li>(اثنان - اثنتان) • (هذان - هاتان)</li>
+        <li>(اللذان - اللتان).</li>
+        <li>(كلا - كلتا) إذا أُضيفتا إلى الضمير.</li>
+      </ul>
+      <p class="note"><span class="arrow">←</span> أما إذا أُضيفتا إلى اسم ظاهر فتعرب إعراب المفرد بعلامات مقدّرة.</p>
+      <p class="note lemon">✱ سبق ودرسنا إعرابها في درس التوكيد.</p>
+    </article>
+    <!-- جمع المذكر السالم -->
+    <article class="card">
+      <span class="node mint sq">جمع المذكر السالم</span>
+      <p class="def">هو ما دلّ على أكثر من اثنين بزيادة واو ونون أو ياء ونون. مع سلامة لفظ مفرده. (مسلمون / مسلم)</p>
+      <p class="lbl">إعرابه:</p>
+      <ul class="l">
+        <li>يُرفع وعلامة رفعه <u>الواو</u>. (المسلمون متعاونون)</li>
+        <li>يُنصب ويُجر وعلامة نصبه وجره <u>الياء</u>. (مررتُ بالمعلمين)</li>
+      </ul>
+      <p class="lbl">ما يلحق به:</p>
+      <ul class="l">
+        <li>(أولو - أولي) بمعنى أصحاب. • (عشرون إلى تسعين)</li>
+        <li>(بنون - بنين) • (أهلون - أهلين) • (سنون - سنين)</li>
+        <li>(عالمون - عالمين) • (ذوو - ذوي).</li>
+      </ul>
+      <p class="note"><span class="arrow">⇐</span> يشترط في الاسم الذي يُجمع جمعَ مذكرٍ سالمًا:</p>
+      <ul class="l">
+        <li>أن يكون علمًا لمذكر عاقل خاليًا من تاء التأنيث.</li>
+        <li>أن يكون وصفًا لمذكر عاقل خاليًا من تاء التأنيث.</li>
+      </ul>
+    </article>
+    <!-- جمع المؤنث السالم -->
+    <article class="card">
+      <span class="node rose sq">جمع المؤنث السالم</span>
+      <p class="def">هو ما دلّ على أكثر من اثنتين بزيادة ألف وتاء مفتوحة. (طالبات - زينبات).</p>
+      <p class="lbl">إعرابه:</p>
+      <ul class="l">
+        <li>يُرفع بالضمة: المعلماتُ مجتهداتٌ</li>
+        <li>يُنصب ويُجر بالكسرة: رأيتُ المعلماتِ ....</li>
+      </ul>
+      <p class="lbl">ما يلحق به:</p>
+      <ul class="l">
+        <li>(أولات) بمعنى صاحبات. • مفردها ذات</li>
+        <li>(سعادات - عنايات - نغمات) ← علمًا لمذكر أو مؤنث.</li>
+        <li>(عرفات - أذرعات) دلّ على مفرد مذكر أو مؤنث.</li>
+        <li>(بنات - بركات ..)</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<footer>مع تمنياتنا لكم بالتوفيق — المعلمة آلاء أحمد</footer>
+</div>
+
+</body></html>
